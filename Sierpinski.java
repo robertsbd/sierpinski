@@ -11,12 +11,21 @@ import javax.swing.JFrame;
 public class Sierpinski {
         
     public static void main(String[] args) {
-        JFrame frame = new JFrame();      
+        AllPoints dataPoints = new AllPoints(Constants.TOP, Constants.LEFT, Constants.RIGHT); 
+
+        JFrame frame = new JFrame("Sierpinski Fractal");      
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.add(new Panel(Constants.TOP, Constants.LEFT, Constants.RIGHT));
+        frame.setLayout(new BorderLayout());      
         frame.setSize(Constants.FRAME_WIDTH, Constants.FRAME_HEIGHT);
-        frame.setVisible(true);      
+        frame.add(new SierpinskiPanel(dataPoints.getPoints(), Constants.ITERATIONS));
+        frame.setVisible(true);  
+        
+//        for(int i = 0; i < Constants.ITERATIONS; i++){
+//            frame.remove(myPanel);
+//            myPanel = new Panel(dataPoints.getPoints(), i);
+//            frame.add(myPanel);
+//            frame.revalidate();
+//        } 
     }
 }
 

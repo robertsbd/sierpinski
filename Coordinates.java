@@ -9,7 +9,8 @@ public class Coordinates {
     private int y;
     
     Coordinates(){
-        
+        this.x = 0;
+        this.y = 0;
     }
     
     Coordinates (int x, int y) {
